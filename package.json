@@ -1,0 +1,15 @@
+{
+  "name": "angular-es6-mobx-flux-example",
+  "version": "1.0.0",
+  "description": "A sample app featuring Flux and Angular es6 with mobx",
+  "main": "index.js",
+  "repository": "https://github.com/theodesp/angular-es6-mobx-flux-example",
+  "author": "Theo Despoudis thdespou@hotmail.com",
+  "license": "MIT",
+  "dependencies": {
+    "angular": "^1.6.1",
+    "angular-ui-router": "^0.3.2",
+    "flux": "^3.1.2",
+    "mobx": "^2.7.0"
+  }
+}
