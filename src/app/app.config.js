@@ -1,13 +1,12 @@
 const routes = ($stateProvider, $locationProvider, $urlRouterProvider) => {
+  'ngInject';
   $locationProvider.html5Mode(true);
   $urlRouterProvider.otherwise('/');
   $stateProvider
     .state('home', {
       url: '/',
-      template: require('./app.html'),
-      controller: 'AppCtrl',
-      controllerAs: 'vm'
+      component: 'app',
     })
-}
+};
 
 export default routes;

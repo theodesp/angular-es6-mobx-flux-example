@@ -1,4 +1,9 @@
-<main>
-    <h1 class="title">Hello from Angular 1</h1>
-    <a href="vm.url">{{::vm.url}}</a>
+<main class="container">
+    <div class="row">
+        <h1 class="title">Welcome to the BeerCyclopedia</h1>
+    </div>
+
+    <div class="row">
+        <button ng-click="vm.fetchBeerArray(2)">Fetch Random Beer</button>
+    </div>
 </main>

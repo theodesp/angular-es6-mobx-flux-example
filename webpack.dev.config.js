@@ -3,15 +3,14 @@ var path = require('path');
 var assign = require('lodash').assign;
 var webpack = require('webpack');
 var HtmlWebpackPlugin = require('html-webpack-plugin');
-var ExtractTextPlugin = require('extract-text-webpack-plugin');
 
 var config = assign({}, {
   debug: true,
   entry: {
-    vendor: ['mobx', 'angular', 'angular-ui-router', 'flux', 'lodash'],
+    vendor: ['mobx', 'angular', 'angular-ui-router', 'flux', 'lodash', 'normalizr'],
     app: ['webpack-hot-middleware/client', path.join(__dirname, 'src', 'app', 'app.js')]
   },
-  devtool: 'eval-source-map',
+  devtool: 'cheap-source-map',
   output: {
     path: path.join(__dirname, 'dist'),
     filename: '[name].bundle.js',
@@ -26,10 +25,9 @@ var config = assign({}, {
       template: 'src/public/index.html', // Load a custom template
       inject: 'body' // Inject all scripts into the body,
     }),
-    new ExtractTextPlugin('[name].css', { allChunks: true }),
     new webpack.DefinePlugin({
       'process.env': {
-        NODE_ENV: JSON.stringify(process.env.NODE_ENV),
+        NODE_ENV: JSON.stringify(process.env.NODE_ENV)
       },
     }),
     new webpack.optimize.CommonsChunkPlugin({
@@ -47,18 +45,11 @@ var config = assign({}, {
       },
       {
         test: /\.css$/,
-        loader: ExtractTextPlugin.extract(
-          'style-loader',
-          'css-loader'
-        )
+        loader: 'style-loader!css-loader'
       },
       {
         test: /\.less$/,
-        loader: ExtractTextPlugin.extract(
-          'style-loader',
-          'css-loader',
-          'less-loader'
-        )
+        loader: 'style-loader!css-loader!less-loader'
       },
       {
         test: /\.(png|jpg|jpeg|gif|svg|woff|woff2|ttf|eot)$/,
