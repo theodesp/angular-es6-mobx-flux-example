@@ -18,7 +18,8 @@
     "flux": "^3.1.2",
     "lodash": "^4.17.4",
     "mobx": "^2.7.0",
-    "normalize.css": "^5.0.0"
+    "normalize.css": "^5.0.0",
+    "wingcss": "^0.1.9"
   },
   "devDependencies": {
     "angular-mocks": "^1.6.1",

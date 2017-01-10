@@ -1,7 +1,6 @@
 class AppController {
   constructor() {
-    const vm = this;
-    vm.url = 'https://github.com/preboot/angular-webpack';
+    this.url = 'https://github.com/preboot/angular-webpack';
   }
 }
 

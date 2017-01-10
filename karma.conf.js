@@ -17,14 +17,14 @@ module.exports = function(config) {
 
     files: [
       // Grab all files in the app folder that contain .test.
-      'tests/tests.webpack.js'
+      'tests.webpack.js'
     ],
 
     preprocessors: {
       // Reference: http://webpack.github.io/docs/testing.html
       // Reference: https://github.com/webpack/karma-webpack
       // Convert files with webpack and load sourcemaps
-      'tests/tests.webpack.js': ['webpack', 'sourcemap']
+      'tests.webpack.js': ['webpack', 'sourcemap']
     },
 
 
