@@ -19,7 +19,6 @@
     "lodash": "^4.17.4",
     "mobx": "^2.7.0",
     "normalize.css": "^5.0.0",
-    "normalizr": "^3.0.2",
     "wingcss": "^0.1.9"
   },
   "devDependencies": {

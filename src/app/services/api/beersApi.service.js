@@ -6,15 +6,15 @@ class BeersApiService {
     this.api = apiService;
   }
 
-  fetchBeer = (id, url = `${this.root_url}/${id}`) => {
+  fetchByName = (name, url = `${this.root_url}/?beer_name=${name}`) => {
     return this.api.fetch(url)
   };
 
-  fetchRandomBeer = (url = `${this.root_url}/random`) => {
+  fetchRandom = (url = `${this.root_url}/random`) => {
     return this.api.fetch(url);
   };
 
-  fetchBeerArray = (page = 1, url = `${this.root_url}?page=${page}&per_page=10`) => {
+  fetchArray = (page = 1, url = `${this.root_url}?page=${page}&per_page=10`) => {
     return this.api.fetch(url);
   };
 }

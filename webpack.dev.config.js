@@ -7,7 +7,7 @@ var HtmlWebpackPlugin = require('html-webpack-plugin');
 var config = assign({}, {
   debug: true,
   entry: {
-    vendor: ['mobx', 'angular', 'angular-ui-router', 'flux', 'lodash', 'normalizr'],
+    vendor: ['mobx', 'angular', 'angular-ui-router', 'flux', 'lodash'],
     app: ['webpack-hot-middleware/client', path.join(__dirname, 'src', 'app', 'app.js')]
   },
   devtool: 'cheap-source-map',
