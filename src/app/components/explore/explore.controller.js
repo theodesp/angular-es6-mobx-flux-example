@@ -1,11 +1,24 @@
+import StateComponent from '../../common/stateComponent';
+
 class ExploreController {
-  constructor() {
+  constructor(BeerActionCreator) {
     'ngInject';
-    this.name = 'Bad Pixie';
+
+    this.props = {
+      name: 'Bad Pixie',
+      isRandom: false
+    }
+
+    this.state = this.props;
+    this.actionCreator = BeerActionCreator;
   }
 
-  fetch(name) {
-    console.log(name);
+  goFetch = (name) => {
+    if (this.state.isRandom) {
+      this.actionCreator.requestRandomBeer();
+    } else {
+      this.actionCreator.requestBeer(name);
+    }
   }
 }
 

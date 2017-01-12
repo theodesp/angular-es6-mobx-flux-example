@@ -1,8 +1,10 @@
 <form novalidate>
     <div class="row">
         <div class="col-12">
-            <input type="text" ng-model="vm.name" placeholder="Enter beer name..." />
+            <input type="text" ng-model="vm.props.name" placeholder="Enter beer name..." ng-model-options="{debounce: 300}" disabled="vm.state.isRandom" ng-disabled="vm.state.isRandom" />
+            <input id="randomBeer" type="checkbox" ng-model="vm.state.isRandom" />
+            <label for="randomBeer">Get random Beer</label>
         </div>
-        <input type="submit" value="Go" ng-click="vm.fetch(vm.name)" />
+        <button type="submit" ng-click="vm.goFetch(vm.state.name)">Go</button>
     </div>
 </form>
