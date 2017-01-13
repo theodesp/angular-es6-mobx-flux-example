@@ -10,7 +10,7 @@ var config = assign({}, {
     vendor: ['mobx', 'angular', 'angular-ui-router', 'flux', 'lodash', 'angular-loading-bar'],
     app: ['webpack-hot-middleware/client', path.join(__dirname, 'src', 'app', 'app.js')]
   },
-  devtool: 'source-map',
+  devtool: 'cheap-source-map',
   output: {
     path: path.join(__dirname, 'dist'),
     filename: '[name].bundle.js',
