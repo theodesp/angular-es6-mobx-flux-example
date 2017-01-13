@@ -13,4 +13,26 @@ export const isObjectShallowModified = (prev, next) => {
     }
   }
   return false;
+};
+
+/**
+ * Creates a handler that responds to API requests
+ */
+export function createApiActionHandler(types) {
+  const { _, failure, success } = types;
+
+  return (action, successCallBack, errorCallBack) => {
+    switch (action.type) {
+      case failure:
+        errorCallBack();
+        break;
+
+      case success:
+        successCallBack();
+        break;
+
+      default:
+        break;
+    }
+  };
 }

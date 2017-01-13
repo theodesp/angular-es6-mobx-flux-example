@@ -1,11 +1,12 @@
 import { dispatchAsync } from '../../common/appDispatcher';
 
 class BeerActionCreator {
-  constructor(BeersApiService) {
+  constructor(beersApiService) {
     'ngInject';
 
-    this.api = BeersApiService;
+    this.api = beersApiService;
   }
+
   requestBeer = (fullName) => {
     dispatchAsync(this.api.fetchByName(fullName), {
       request: 'REQUEST_BEER',

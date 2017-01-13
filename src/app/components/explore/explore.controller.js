@@ -1,7 +1,9 @@
 import StateComponent from '../../common/stateComponent';
+import { pick, assign } from 'lodash';
+import { autorun } from 'mobx';
 
 class ExploreController {
-  constructor(BeerActionCreator) {
+  constructor(beerActionCreator, beerStore) {
     'ngInject';
 
     this.props = {
@@ -10,7 +12,21 @@ class ExploreController {
     }
 
     this.state = this.props;
-    this.actionCreator = BeerActionCreator;
+    this.store = beerStore;
+    this.actionCreator = beerActionCreator;
+  }
+
+  $onInit = () => {
+    const selector = () => {
+      const scopeData = pick(this.store, 'beer', 'isLoading');
+      assign(this.state, scopeData);
+    };
+
+    this.mobxHandler = autorun(selector);
+  }
+
+  $onDestroy = () => {
+    this.mobxHandler();
   }
 
   goFetch = (name) => {

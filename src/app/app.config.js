@@ -1,5 +1,8 @@
-const routes = ($stateProvider, $locationProvider, $urlRouterProvider) => {
+const config = ($stateProvider, $locationProvider, $urlRouterProvider, cfpLoadingBarProvider) => {
   'ngInject';
+
+  cfpLoadingBarProvider.spinnerTemplate = '<div id="loading-bar-spinner"><span class="fa fa-spinner">Fetching Beer...</div>';
+
   $locationProvider.html5Mode(true);
   $urlRouterProvider.otherwise('/');
   $stateProvider
@@ -9,4 +12,4 @@ const routes = ($stateProvider, $locationProvider, $urlRouterProvider) => {
     })
 };
 
-export default routes;
+export default config;
