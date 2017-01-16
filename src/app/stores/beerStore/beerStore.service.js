@@ -1,4 +1,3 @@
-import { createApiActionHandler } from '../../common/utils';
 import { observable, action } from 'mobx';
 import { assign } from 'lodash';
 import { register } from '../../common/appDispatcher';
@@ -32,20 +31,20 @@ class BeerStore {
           break;
       }
     });
-  }
+  };
 
   /**
    * A todo was somehow deleted, clean it from the client memory
    */
   removeBeer = () => {
     this.beer = undefined;
-  }
+  };
 
   @action handleLoadSuccess = (response) => {
     console.log(response);
     this.beer = new BeerModel(response.data);
     this.isLoading = false;
-  }
+  };
 
   @action handleLoadFailure = (error) => {
     console.log(error);

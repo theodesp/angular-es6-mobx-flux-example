@@ -1,4 +1,3 @@
-import StateComponent from '../../common/stateComponent';
 import { pick, assign } from 'lodash';
 import { autorun } from 'mobx';
 
@@ -9,7 +8,7 @@ class ExploreController {
     this.props = {
       name: 'Bad Pixie',
       isRandom: false
-    }
+    };
 
     this.state = this.props;
     this.store = beerStore;
@@ -23,11 +22,11 @@ class ExploreController {
     };
 
     this.mobxHandler = autorun(selector);
-  }
+  };
 
   $onDestroy = () => {
     this.mobxHandler();
-  }
+  };
 
   goFetch = (name) => {
     if (this.state.isRandom) {

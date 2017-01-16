@@ -1,18 +1,18 @@
 <div class="beer-view" ng-if="vm.props.beer">
     <div class="row">
         <div class="col-4">
-            <img class="beer-image" src="{{vm.props.beer.image_url}}">
+            <img class="beer-image" ng-src="{{vm.props.beer.image_url}}">
         </div>
         <div class="col-8">
-            <h4>{{vm.props.beer.name}}</h4>
-            <p>Description: {{vm.props.beer.description}}</p>
-            <p>First brewed: {{vm.props.beer.first_brewed}}</p>
-            <p>Tagline: {{vm.props.beer.tagline}}</p>
-            <p>Attenuation level{{vm.props.beer.attenuation_level}}</p>
-            <p>Abv: {{vm.props.beer.abv}}</p>
-            <p>Ibu: {{vm.props.beer.ibu}}</p>
-            <p>Ph: {{vm.props.beer.ph}}</p>
-            <p>Srm: {{vm.props.beer.srm}}</p>
+            <h4 class="name">{{vm.props.beer.name}}</h4>
+            <p><b>Description:</b> {{vm.props.beer.description}}</p>
+            <p><b>First brewed:</b> {{vm.props.beer.first_brewed}}</p>
+            <p><b>Tagline:</b> {{vm.props.beer.tagline}}</p>
+            <p><b>Attenuation level:</b> {{vm.props.beer.attenuation_level}}</p>
+            <p><b>Abv:</b> {{vm.props.beer.abv}}</p>
+            <p><b>Ibu:</b> {{vm.props.beer.ibu}}</p>
+            <p><b>Ph:</b> {{vm.props.beer.ph}}</p>
+            <p><b>Srm:</b> {{vm.props.beer.srm}}</p>
         </div>
     </div>
 </div>
