@@ -34,7 +34,7 @@ class BeerStore {
   };
 
   /**
-   * A todo was somehow deleted, clean it from the client memory
+   * A beer was somehow deleted, clean it from the client memory
    */
   removeBeer = () => {
     this.beer = undefined;
