@@ -5,9 +5,8 @@ var webpack = require('webpack');
 var HtmlWebpackPlugin = require('html-webpack-plugin');
 
 var config = assign({}, {
-  debug: true,
   entry: {
-    vendor: ['mobx', 'angular', 'angular-ui-router', 'flux', 'lodash', 'angular-loading-bar'],
+    vendor: ['mobx', 'angular', '@uirouter/angularjs', 'flux', 'lodash', 'angular-loading-bar'],
     app: ['webpack-hot-middleware/client', path.join(__dirname, 'src', 'app', 'app.js')]
   },
   devtool: 'cheap-source-map',
@@ -19,7 +18,7 @@ var config = assign({}, {
   },
   plugins: [
     new webpack.HotModuleReplacementPlugin(),
-    new webpack.NoErrorsPlugin(),
+    new webpack.NoEmitOnErrorsPlugin(),
     new HtmlWebpackPlugin({
       title: 'Angular',
       template: 'src/public/index.html', // Load a custom template
@@ -37,11 +36,17 @@ var config = assign({}, {
     })
   ],
   module: {
-    loaders: [{
+    rules: [{
         test: /\.js$/,
-        loaders: ['ng-annotate', 'babel-loader'],
         include: path.join(__dirname, 'src'),
-        exclude: path.join(__dirname, 'node_modules')
+        exclude: path.join(__dirname, 'node_modules'),
+        use: [
+          {
+            loader: 'ng-annotate-loader',
+            options: { es6: true, explicitOnly: false },
+          },
+          {loader: 'babel-loader'}
+        ]
       },
       {
         test: /\.css$/,
@@ -53,11 +58,11 @@ var config = assign({}, {
       },
       {
         test: /\.(png|jpg|jpeg|gif|svg|woff|woff2|ttf|eot)$/,
-        loader: 'file'
+        loader: 'file-loader'
       },
       {
         test: /\.html$/,
-        loader: 'raw'
+        loader: 'raw-loader'
       }
     ],
   },

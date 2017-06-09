@@ -1,7 +1,7 @@
 import 'normalize.css/normalize.css';
 import 'wingcss/dist/wing.css';
 import angular from 'angular';
-import uirouter from 'angular-ui-router';
+import uirouter from '@uirouter/angularjs';
 import services from './services/services';
 import stores from './stores/stores';
 import components from './components/components';
