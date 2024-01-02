@@ -4,7 +4,7 @@
   "description": "A sample app featuring Flux and Angular es6 with mobx",
   "main": "index.js",
   "repository": "https://github.com/theodesp/angular-es6-mobx-flux-example",
-  "author": "Theo Despoudis thdespou@hotmail.com",
+  "author": "Theo Despoudis",
   "license": "MIT",
   "scripts": {
     "build:dev": "rimraf dist && cross-env NODE_ENV=development webpack --config webpack.dev.config.js --bail --progress --profile  --verbose --colors --display-error-details",
